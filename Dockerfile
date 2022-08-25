@@ -4,7 +4,7 @@ FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 WORKDIR /app
 
 # Install git
-RUN apt-get update && apt-get install -y git curl wget && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git curl wget libglib2.0-0 libglib2.0-0 && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Setup conda
 # ENV CONDA_DIR /opt/conda
