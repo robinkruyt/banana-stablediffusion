@@ -24,11 +24,11 @@ RUN curl https://www.googleapis.com/storage/v1/b/aai-blog-files/o/sd-v1-4.ckpt?a
 # Create env for stable diffusion
 RUN cd /app/stablediffusion && conda env create -f environment.yaml
 
-# Install python packages
-RUN conda install -n ldm sanic transformers accelerate
-
 # Set a new shell to include conda env
 SHELL ["/opt/conda/bin/conda", "run", "-n", "ldm", "/bin/bash", "-c"]
+
+# Install python packages
+RUN pip install sanic transformers accelerate
 
 # App specific code
 # We add the banana boilerplate here
